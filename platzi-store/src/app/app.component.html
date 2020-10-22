@@ -1,0 +1,13 @@
+{{title}}
+<input type="text" [(ngModel)]="title">
+
+<div *ngIf="title === 'tamayo'">
+    <p>hola mundo</p>
+</div>
+
+<button (click)="addElement()">Add item</button>
+
+<div *ngFor="let item of array; index as i">
+    {{item}} {{i+1}}
+    <button (click)="deleteItem(i)">eliminar</button>
+</div>
