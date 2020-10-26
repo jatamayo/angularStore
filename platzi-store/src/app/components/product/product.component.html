@@ -1,1 +1,11 @@
 <p>product works!</p>
+
+<div>
+    <p appHighlight>{{product.title | uppercase}}</p>
+    <p>{{product.description}}</p>
+    <h3>{{product.price | currency}}</h3>
+    <p>{{today | date:'medium'}}</p>
+    <img [src]="product.image" alt="">
+</div>
+<!-- Enviar informacion al componente padre -->
+<button (click)="addProduct()" >Agregar al Carrito</button>

@@ -1,13 +1,12 @@
-{{title}}
-<input type="text" [(ngModel)]="title">
+<!-- Enviar data mediante Inputs -->
 
-<div *ngIf="title === 'tamayo'">
-    <p>hola mundo</p>
-</div>
+<input type="number" [(ngModel)]="power">
+{{power | exponential}}
 
-<button (click)="addElement()">Add item</button>
-
-<div *ngFor="let item of array; index as i">
-    {{item}} {{i+1}}
-    <button (click)="deleteItem(i)">eliminar</button>
+<div class="product-grid">
+    <app-product 
+        *ngFor="let product of products" 
+        [product]="product" 
+        (outputAddProduct)="addProduct($event)">
+    </app-product>
 </div>
