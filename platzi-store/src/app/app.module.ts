@@ -7,13 +7,30 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
 import { ExponentialPipe } from './pipes/exponential.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { ContactComponent } from './components/contact/contact.component';
+import { ProductsComponent } from './components/products/products.component';
+import { TestingComponent } from './components/testing/testing.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { PreloadingStrategy } from '@angular/router';
 
 @NgModule({
     declarations: [
         AppComponent,
         ProductComponent,
         ExponentialPipe,
-        HighlightDirective
+        HighlightDirective,
+        ContactComponent,
+        ProductsComponent,
+        TestingComponent,
+        HeaderComponent,
+        FooterComponent,
+        PageNotFoundComponent,
+        ProductDetailComponent,
+        LayoutComponent
     ],
     imports: [
         BrowserModule,

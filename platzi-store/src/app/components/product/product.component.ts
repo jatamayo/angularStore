@@ -1,8 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {
+    Component,
+    Input,
+    Output,
+    EventEmitter,
+    OnChanges,
+    SimpleChanges,
+    OnInit,
+    DoCheck,
+    OnDestroy
+} from '@angular/core';
 import { Product } from 'src/app/models/product.model';
-// Recibir y enviar datos mediante inputs y outputs desde angular core
-import { Input, Output, EventEmitter } from '@angular/core';
-
 
 @Component({
     selector: 'app-product',
@@ -10,22 +17,33 @@ import { Input, Output, EventEmitter } from '@angular/core';
     styleUrls: ['./product.component.scss']
 })
 
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, DoCheck, OnDestroy  {
+
 
     @Input() product: Product;
-    @Output() outputAddProduct: EventEmitter<number> = new EventEmitter();
+    @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
-    // Date
     today = new Date();
 
-    addProduct(): void {
-        console.log('AGREGAR AL CARRITO');
-        this.outputAddProduct.emit(this.product.id);
+    constructor() {
+        console.log('1. constructor');
     }
 
-    constructor() { }
-
     ngOnInit(): void {
+        console.log('3. ngOnInit');
+    }
+
+    ngDoCheck(): void {
+        console.log('4. ngDoCheck');
+    }
+
+    ngOnDestroy(): void {
+        console.log('5. ngOnDestroy');
+    }
+
+    addCart(): void {
+        console.log('añadir al carrito');
+        this.productClicked.emit(this.product.id);
     }
 
 }
