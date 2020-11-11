@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params} from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 // SERVICES
-import { ProductsService } from 'src/app/services/products/products.service';
+import { ProductsService } from 'src/app/core/services/product/products.service';
 // MODELS
 import { Product } from 'src/app/models/product.model';
 
@@ -22,7 +22,7 @@ export class ProductDetailComponent implements OnInit {
         this.activateRoute.params.subscribe(async (params: Params) => {
             const ID = params.id;
             this.product = await this.productsService.getProduct(ID);
-            console.log("PRODUCT");
+            console.log('PRODUCT');
             console.log(this.product);
         });
     }

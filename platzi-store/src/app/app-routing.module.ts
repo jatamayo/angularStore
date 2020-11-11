@@ -8,6 +8,9 @@ import { ContactComponent } from 'src/app/components/contact/contact.component';
 import { TestingComponent } from 'src/app/components/testing/testing.component';
 import { PageNotFoundComponent } from 'src/app/components/page-not-found/page-not-found.component';
 import { LayoutComponent } from 'src/app/components/layout/layout.component';
+// GUARD
+import { AdminGuard } from './guard/admin.guard';
+
 
 const routes: Routes = [
     {
@@ -34,6 +37,7 @@ const routes: Routes = [
             },
             {
                 path: 'contact',
+                canActivate: [AdminGuard],
                 component: ContactComponent
             }
         ]
@@ -49,7 +53,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
+    imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }

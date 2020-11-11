@@ -5,29 +5,26 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
-import { ExponentialPipe } from './pipes/exponential.pipe';
-import { HighlightDirective } from './directives/highlight.directive';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProductsComponent } from './components/products/products.component';
 import { TestingComponent } from './components/testing/testing.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { PreloadingStrategy } from '@angular/router';
+// MODULES
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
     declarations: [
         AppComponent,
         ProductComponent,
-        ExponentialPipe,
-        HighlightDirective,
         ContactComponent,
         ProductsComponent,
         TestingComponent,
-        HeaderComponent,
-        FooterComponent,
         PageNotFoundComponent,
         ProductDetailComponent,
         LayoutComponent
@@ -35,7 +32,11 @@ import { PreloadingStrategy } from '@angular/router';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        SharedModule,
+        CoreModule,
+        BrowserAnimationsModule,
+        MaterialModule
     ],
     providers: [],
     bootstrap: [AppComponent]
